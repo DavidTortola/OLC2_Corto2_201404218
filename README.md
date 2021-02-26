@@ -49,7 +49,7 @@ código de tres direcciones.
 
 ![Gramatica](imagenes/Gramatica.PNG)
 
-Se utilizó una gramática no ambigua para las operaciones aritméticas básicas, para un analizador descendente. Además, se utilizó esquemas de traducción dirigidas por sintaxis posfija para las operaciones. Las acciones se encargan de convertir estas operaciones a su equivalente en código de 3 direcciones, auxiliandose de variables temporales. 
+Se utilizó una gramática no ambigua para las operaciones aritméticas básicas, para un analizador descendente. Además, se utilizó esquemas de traducción dirigidas por sintaxis posfija para las operaciones. Las acciones se encargan de convertir estas *operaciones aritméticas* a su equivalente en código de 3 direcciones, auxiliandose de variables temporales. 
 
 Se utilizan 2 atributos sintetizados: `tmp` y `c3d`. `tmp` es el atributo que lleva la información de los valores, por ejemplo un número o identificador, mientras se decide la estructura de 3 direcciones que se utilizará. 
 
