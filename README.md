@@ -2,7 +2,7 @@ Universidad de San Carlos de Guatemala \
 Facultad de Ingeniería \
 Escuela de Ciencias y Sistemas \
 Catedrático Erick Carlos Roberto Navarro Delgado \
-Organización De Lenguajes Y Compiladores 2 \
+Organización De Lenguajes Y Compiladores 2 
 
 # Examen Corto 2
 
@@ -22,15 +22,23 @@ Descripción de los archivos:
 
 - **Analizador.jison:** Este archivo contiene todas las instrucciones para que Jison pueda generar el analizador. Y está compuesto por las siguientes partes:
 
-    - **Definición de código del usuario:** En esta parte se coloca código JavaScript creado por el usuario. En este caso se creó un atributo `contador` para llevar la cuenta de los atributos temporales que se han creado. También se creó la función `new_temp()` la cuál se encarga de devolvernos un string de la forma `T` + `numero`, donde el número es el valor de contador. *Por ejemplo "T0", "T1", etc.*
+    - **Definición de código del usuario:** En esta parte se coloca código JavaScript creado por el usuario y debe ir encerrado por `%{ }%`. En este caso se creó un atributo `contador` para llevar la cuenta de los atributos temporales que se han creado. También se creó la función `new_temp()` la cuál se encarga de devolvernos un string de la forma `T` + `numero`, donde el número es el valor de contador. *Por ejemplo "T0", "T1", etc.*  
+    ![AnalizadorJison1](imagenes/AnalizadorJison1.PNG)
+
 
     - **Definición de expresiones regulares y símbolos:** Se le indica a Jison las expresiones regulares y los símbolos que pertenecen al lenguaje. En base a estas definiciones, Jison generará un analizador léxico para reconocer tokens. Este lenguaje recibe identificadores, números y símbolos aritméticos.
+    ![AnalizadorJison2](imagenes/AnalizadorJison2.PNG)
 
     - **Definición de la gramática:** Acá se colocan todas las producciones de la gramática junto con sus atributos y esquemas de traducción. Usando esta información, Jison generará un analizador sintáctico y realizará las acciones que le especifiquemos. En este caso se escribió la gramática para un *análisis descendente*.
+    ![AnalizadorJison3](imagenes/AnalizadorJison3.PNG)
+    ![AnalizadorJison4](imagenes/AnalizadorJison4.PNG)
 
 - **Analizador.js:** Jison es el encargado de escribir este archivo, en el cual se crean los analizadores léxicos y sintácticos en base al contenido del documento **Analizador.jison**. Este es el archivo que ejecutaremos posteriormente para poder utilizar el analizador. No es necesario modificar este documento a mano, ya que Jison hace todo el trabajo por nosotros.
+    ![AnalizadorJS](imagenes/AnalizadorJS.PNG)
 
 - **probarAnalizador:** Este es un archivo de texto plano en el cual escribimos la información que queremos enviar a nuestro análisis. También es posible enviar el texto directamente al analizador utilizando consola, pero por comódidad lo hacemos en un archivo.
+
+    ![probarAnalizador](imagenes/probarAnalizador.PNG)
 
 
 ## Cómo utilizar el programa
@@ -44,13 +52,23 @@ Descripción de los archivos:
 
 ## Ejemplos:
 
-1. (a + b) * (a + c)
-2. x * x
-3. y * y
-4. x2 + y2
-5. b + c + d
-6. a * a + b * b
-7. 5 + 2 * b
-8. 6 + 7 * 10+5 / 1
-9. ((7 + 9)/(((3 + 1) * (6 + 7) + 8) * 7) / 9) + 100
-10. 7 * 9 - 89 + 63
+1. **(a + b) * (a + c)** \
+![Entrada1](imagenes/Entrada1.PNG)
+2. **x * x** \
+![Entrada2](imagenes/Entrada2.PNG)
+3. **y * y** \
+![Entrada3](imagenes/Entrada3.PNG)
+4. **x2 + y2** \
+![Entrada4](imagenes/Entrada4.PNG)
+5. **b + c + d** \
+![Entrada5](imagenes/Entrada5.PNG)
+6. **a * a + b * b** \
+![Entrada6](imagenes/Entrada6.PNG)
+7. **5 + 2 * b** \
+![Entrada7](imagenes/Entrada7.PNG)
+8. **6 + 7 * 10 + 5 / 1** \
+![Entrada8](imagenes/Entrada8.PNG)
+9. **((7 + 9)/(((3 + 1) * (6 + 7) + 8) * 7) / 9) + 100** \
+![Entrada9](imagenes/Entrada9.PNG)
+10. **7 * 9 - 89 + 63** \
+![Entrada10](imagenes/Entrada10.PNG)
