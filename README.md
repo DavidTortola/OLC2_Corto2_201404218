@@ -36,7 +36,7 @@ código de tres direcciones.
     ![AnalizadorJison3](imagenes/AnalizadorJison3.PNG)
     ![AnalizadorJison4](imagenes/AnalizadorJison4.PNG)
 
-- **Analizador.js:** Jison es el encargado de escribir este archivo, en el cual se crean los analizadores léxicos y sintácticos en base al contenido del documento **Analizador.jison**. Este es el archivo que ejecutaremos posteriormente para poder utilizar el analizador. No es necesario modificar este documento a mano, ya que Jison hace todo el trabajo por nosotros.
+- **Analizador.js:** Jison es el encargado de escribir este archivo, en el cual se crean los analizadores léxicos y sintácticos en base al contenido del documento *Analizador.jison*. Este es el archivo que ejecutaremos posteriormente para poder utilizar el analizador. No es necesario modificar este documento a mano, ya que Jison hace todo el trabajo por nosotros.
     
     ![AnalizadorJS](imagenes/AnalizadorJS.PNG)
 
