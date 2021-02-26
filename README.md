@@ -55,7 +55,7 @@ Se utilizan 2 atributos sintetizados: `tmp` y `c3d`. `tmp` es el atributo que ll
 
 ![Esquema1](imagenes/Esquema1.PNG)
 
-Cuando se encuentra una operación, se construye el código en 3 dimensiones concatenando al código en 3 direcciones que traen los nodos en su atributo `c3d` junto con la información que traen los nodos en sus atributos `tmp` y el resultado se guarda en `c3d` del padre, de esta manera, se va construyendo las acciones de 3 direcciones de manera ascendente, hasta llegar al último nodo y en este se imprime código.
+Cuando se encuentra una operación, se construye el código en 3 direcciones concatenando al código en 3 direcciones que traen los nodos en su atributo `c3d` junto con la información que traen los nodos en sus atributos `tmp` y el resultado se guarda en `c3d` del padre, de esta manera, se va construyendo las acciones de 3 direcciones de manera ascendente, hasta llegar al último nodo y en este se imprime código.
 
 ![Esquema2](imagenes/Esquema2.PNG)
 
