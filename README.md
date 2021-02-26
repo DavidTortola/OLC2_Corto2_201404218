@@ -52,23 +52,23 @@ Descripción de los archivos:
 
 ## Ejemplos:
 
-1. **(a + b) * (a + c)** \
+1. **[(a + b) * (a + c)]** \
 ![Entrada1](imagenes/Entrada1.PNG)
-2. **x * x** \
+2. **[x * x]** \
 ![Entrada2](imagenes/Entrada2.PNG)
-3. **y * y** \
+3. **[y * y]** \
 ![Entrada3](imagenes/Entrada3.PNG)
-4. **x2 + y2** \
+4. **[x2 + y2]** \
 ![Entrada4](imagenes/Entrada4.PNG)
-5. **b + c + d** \
+5. **[b + c + d]** \
 ![Entrada5](imagenes/Entrada5.PNG)
-6. **a * a + b * b** \
+6. **[a * a + b * b]** \
 ![Entrada6](imagenes/Entrada6.PNG)
-7. **5 + 2 * b** \
+7. **[5 + 2 * b]** \
 ![Entrada7](imagenes/Entrada7.PNG)
-8. **6 + 7 * 10 + 5 / 1** \
+8. **[6 + 7 * 10 + 5 / 1]** \
 ![Entrada8](imagenes/Entrada8.PNG)
-9. **((7 + 9)/(((3 + 1) * (6 + 7) + 8) * 7) / 9) + 100** \
+9. **[((7 + 9)/(((3 + 1) * (6 + 7) + 8) * 7) / 9) + 100]** \
 ![Entrada9](imagenes/Entrada9.PNG)
-10. **7 * 9 - 89 + 63** \
+10. **[7 * 9 - 89 + 63]** \
 ![Entrada10](imagenes/Entrada10.PNG)
