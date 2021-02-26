@@ -18,7 +18,7 @@ código de tres direcciones.
 
 ## Detalles Técnicos
 
-Descripción de los archivos:
+### Descripción de los archivos:
 
 - **Analizador.jison:** Este archivo contiene todas las instrucciones para que Jison pueda generar el analizador. Y está compuesto por las siguientes partes:
 
@@ -40,6 +40,20 @@ Descripción de los archivos:
 
     ![probarAnalizador](imagenes/probarAnalizador.PNG)
 
+
+### Descripción de la gramática, atributos y esquemas de traducción:
+
+![Gramatica](imagenes/Gramatica.PNG)
+
+Se utilizó una gramática no ambigua para las operaciones aritméticas básicas, para un analizador descendente. Además, se utilizó esquemas de traducción dirigidas por sintaxis posfija para las operaciones. Las acciones se encargan de convertir estas operaciones a su equivalente en código de 3 direcciones, auxiliandose de variables temporales. 
+
+Se utilizan 2 atributos sintetizados: `tmp` y `c3d`. `tmp` es el atributo que lleva la información de los valores, por ejemplo un número o identificador, mientras se decide la estructura de 3 direcciones que se utilizará. 
+
+![Esquema1](imagenes/Esquema1.PNG)
+
+Cuando se encuentra una operación, se construye el código en 3 dimensiones concatenando al código en 3 direcciones que traen los nodos en su atributo `c3d` jutno con la información que traen los nodos en sus atributos `tmp` y el resultado se guarda en `c3d` del padre, de esta manera, se va construyendo las acciones de 3 direcciones de manera ascendente, hasta llegar al último nodo y en este se imprime código.
+
+![Esquema2](imagenes/Esquema2.PNG)
 
 ## Cómo utilizar el programa
 
