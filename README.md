@@ -4,7 +4,7 @@ Escuela de Ciencias y Sistemas \
 Catedrático Erick Carlos Roberto Navarro Delgado \
 Organización De Lenguajes Y Compiladores 2 \
 
-## Examen Corto 2
+# Examen Corto 2
 
 Estudiante Osmel David Tórtola Tistoj \
 Carnet 201404218
@@ -37,7 +37,7 @@ Descripción de los archivos:
 
 1. Instalar Node.js: https://nodejs.org/en/download/current/ (Se usará node para instalar Jison y para ejecutar el analizador)
 2. Instalar Jison: `npm install jison -g` (Esto es solo necesario para poder generar el archivo Analizador.js, si ya se cuenta con este archivo y sólo se quiere ejecutar, no hace falta tener instalado jison).
-3. Generar el analizador utilizando Jison: `jison calculator.jison`
+3. Generar el analizador utilizando Jison: `jison Analizador.jison`
 4. Escribir en probarAnalizador la entrada deseada, o desde consola con el comando: `echo (a + b) * (a + c) > probarAnalizador`
 5. Ejecutar nuestro analizador y enviarle como entrada el contenido de probarAnalizador: `node Analizador.js probarAnalizador`
 
