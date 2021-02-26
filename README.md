@@ -18,28 +18,46 @@ código de tres direcciones.
 
 ## Detalles Técnicos
 
-Descripción de los archivos:
+### Descripción de los archivos:
 
 - **Analizador.jison:** Este archivo contiene todas las instrucciones para que Jison pueda generar el analizador. Y está compuesto por las siguientes partes:
 
     - **Definición de código del usuario:** En esta parte se coloca código JavaScript creado por el usuario y debe ir encerrado por `%{ }%`. En este caso se creó un atributo `contador` para llevar la cuenta de los atributos temporales que se han creado. También se creó la función `new_temp()` la cuál se encarga de devolvernos un string de la forma `T` + `numero`, donde el número es el valor de contador. *Por ejemplo "T0", "T1", etc.*  
+    
     ![AnalizadorJison1](imagenes/AnalizadorJison1.PNG)
 
 
     - **Definición de expresiones regulares y símbolos:** Se le indica a Jison las expresiones regulares y los símbolos que pertenecen al lenguaje. En base a estas definiciones, Jison generará un analizador léxico para reconocer tokens. Este lenguaje recibe identificadores, números y símbolos aritméticos.
+    
     ![AnalizadorJison2](imagenes/AnalizadorJison2.PNG)
 
     - **Definición de la gramática:** Acá se colocan todas las producciones de la gramática junto con sus atributos y esquemas de traducción. Usando esta información, Jison generará un analizador sintáctico y realizará las acciones que le especifiquemos. En este caso se escribió la gramática para un *análisis descendente*.
+    
     ![AnalizadorJison3](imagenes/AnalizadorJison3.PNG)
     ![AnalizadorJison4](imagenes/AnalizadorJison4.PNG)
 
 - **Analizador.js:** Jison es el encargado de escribir este archivo, en el cual se crean los analizadores léxicos y sintácticos en base al contenido del documento **Analizador.jison**. Este es el archivo que ejecutaremos posteriormente para poder utilizar el analizador. No es necesario modificar este documento a mano, ya que Jison hace todo el trabajo por nosotros.
+    
     ![AnalizadorJS](imagenes/AnalizadorJS.PNG)
 
 - **probarAnalizador:** Este es un archivo de texto plano en el cual escribimos la información que queremos enviar a nuestro análisis. También es posible enviar el texto directamente al analizador utilizando consola, pero por comódidad lo hacemos en un archivo.
 
     ![probarAnalizador](imagenes/probarAnalizador.PNG)
 
+
+### Descripción de la gramática, atributos y esquemas de traducción:
+
+![Gramatica](imagenes/Gramatica.PNG)
+
+Se utilizó una gramática no ambigua para las operaciones aritméticas básicas, para un analizador descendente. Además, se utilizó esquemas de traducción dirigidas por sintaxis posfija para las operaciones. Las acciones se encargan de convertir estas *operaciones aritméticas* a su equivalente en código de 3 direcciones, auxiliandose de variables temporales. 
+
+Se utilizan 2 atributos sintetizados: `tmp` y `c3d`. `tmp` es el atributo que lleva la información de los valores, por ejemplo un número o identificador, mientras se decide la estructura de 3 direcciones que se utilizará. 
+
+![Esquema1](imagenes/Esquema1.PNG)
+
+Cuando se encuentra una operación, se construye el código en 3 direcciones concatenando al código en 3 direcciones que traen los nodos en su atributo `c3d` junto con la información que traen los nodos en sus atributos `tmp` y el resultado se guarda en `c3d` del padre, de esta manera, se va construyendo las acciones de 3 direcciones de manera ascendente, hasta llegar al último nodo y en este se imprime código.
+
+![Esquema2](imagenes/Esquema2.PNG)
 
 ## Cómo utilizar el programa
 
